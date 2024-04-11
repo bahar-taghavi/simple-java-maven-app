@@ -8,11 +8,11 @@ mvn jar:jar install:install help:evaluate -Dexpression=project.name
 
 echo 'The following command extracts the value of the <name/> element'
 echo 'within <project/> of your Java/Maven project''s "pom.xml" file.'
-NAME=`mvn -q -DforceStdout help:evaluate -Dexpression=project.name`
+NAME=`mvn -B -q -DforceStdout help:evaluate -Dexpression=project.name`
 
 echo 'The following command behaves similarly to the previous one but'
 echo 'extracts the value of the <version/> element within <project/> instead.'
-VERSION=`mvn -q -DforceStdout help:evaluate -Dexpression=project.version`
+VERSION=`mvn -B -q -DforceStdout help:evaluate -Dexpression=project.version`
 
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
@@ -22,5 +22,5 @@ echo ${NAME}
 echo Version:
 echo ${VERSION}
 
-chmod 777 ./target/${NAME}-${VERSION}.jar
-java -jar ./target/${NAME}-${VERSION}.jar
+chmod 777 './target/${NAME}-${VERSION}.jar'
+java -jar './target/${NAME}-${VERSION}.jar'
