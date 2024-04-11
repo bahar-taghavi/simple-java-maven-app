@@ -22,5 +22,5 @@ echo ${NAME}
 echo Version:
 echo ${VERSION}
 
-chmod 777 './target/${NAME}-${VERSION}.jar'
-java -jar './target/${NAME}-${VERSION}.jar'
+chmod 777 ./target/${NAME}-${VERSION}.jar
+java -jar ./target/${NAME}-${VERSION}.jar
